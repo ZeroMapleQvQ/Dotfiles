@@ -1,0 +1,174 @@
+{
+    "layer": "top",
+    "height": 30,
+    "spacing": 6,
+    "group/group-power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power",
+            "custom/quit",
+            "custom/lock",
+            "custom/reboot"
+        ]
+    },
+    "group/group-pulseaudio": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-pulseaudio",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "cpu",
+        "memory"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "privacy",
+        "custom/notification",
+        "group/group-pulseaudio",
+        "network",
+        "group/group-power"
+    ],
+    "hyprland/workspaces": {
+        "icon-size": 18,
+        "active-only": false,
+        "all-outputs": false,
+        "persistent-workspaces": true
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "pulseaudio": {
+        "tooltip": false,
+        "format": "{icon}{volume}% ",
+        "format-muted": " ",
+        "on-scroll-up": "swayosd-client --output-volume 2",
+        "on-scroll-down": "swayosd-client --output-volume -2",
+        "on-click": "pavucontrol",
+        "format-icons": {
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
+        }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 40,
+        "icon": true
+    },
+    "network": {
+        "tooltip": false,
+        "format-wifi": " {essid}",
+        "format-ethernet": " ",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+        "reverse-direction": true
+    },
+    "clock": {
+        "interval": 1,
+        "format": "<b>{:%H:%M:%S}</b>",
+        "tooltip-format": "<big>{:%Y-%m-%d %A %Z}</big>"
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10,
+        "on-click": "kitty htop"
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span> ",
+            "none": " ",
+            "dnd-notification": "<span foreground='red'><sup></sup></span> ",
+            "dnd-none": " ",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span> ",
+            "inhibited-none": "  ",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span> ",
+            "dnd-inhibited-none": "  "
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/launcher": {
+        "icon-size": 20,
+        "format": "",
+        "on-click": "rofi -show drun --terminal alacritty",
+        "on-click-right": "rofi -show run --terminal alacritty"
+    },
+    "custom/quit": {
+        "format": " 󰍃 ",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": " 󰍁 ",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/reboot": {
+        "format": " 󰜉 ",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    }
+}

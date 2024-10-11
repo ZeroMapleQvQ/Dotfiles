@@ -1,0 +1,32 @@
+import:
+ - $HOME/.config/alacritty/themes/themes/darcula.yaml
+font:
+  size: 12
+  normal:
+    family: Maple Mono SC NF
+    style: Regular
+  bold:
+    family: Maple Mono SC NF
+  italic:
+    family: Maple Mono SC NF
+window:
+  dimensions:
+    title: Alacritty
+    columns: 100
+    lines: 25
+  dynamic_title: false
+  opacity: 0.75
+cursor:
+  style: Beam
+scrolling:  
+  history: 10000
+  multiplier: 3
+window.opacity: 0.93
+live_config_reload: true
+mouse:
+  hide_when_typing: false
+mouse_bindings:
+  - { mouse: Right, action: Paste }
+key_bindings:
+  - { key: V, mods: Control, action: Paste }
+    #  - { key: C, mods: Control, action: Copy }

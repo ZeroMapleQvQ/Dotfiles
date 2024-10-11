@@ -1,0 +1,24 @@
+import = ["~/.config/alacritty/themes/themes/darcula.toml"]
+
+live_config_reload = true
+[font]
+normal = {family = "Maple Mono SC NF", style = "Regular"}
+bold = {family = "Maple Mono SC NF", style = "Bold"}
+italic = {family = "Maple Mono SC NF", style = "Italic"}
+size = 11
+[window]
+dimensions = {columns = 100, lines = 25}
+dynamic_title = false
+opacity = 0.75
+# window.opacity = 0.93
+[cursor]
+style = {shape = "Beam"}
+[scrolling]  
+history = 10000
+multiplier = 3
+[mouse]
+hide_when_typing = false
+bindings = [{mouse = "Right", action = "Paste"}]
+[keyboard]
+bindings = [{ key = "V", mods = "Control", action = "Paste" }]
+    #  - { key: C, mods: Control, action: Copy }

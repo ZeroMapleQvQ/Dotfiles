@@ -1,0 +1,5 @@
+[pyprland]
+plugins = ["toggle_special", "fetch_client_menu", "expose"]
+[fetch_client_menu]
+engine = "rofi"
+separator = ""
