@@ -21,30 +21,44 @@
         "drawer": {
             "transition-duration": 500,
             "children-class": "not-pulseaudio",
-            "transition-left-to-right": true
+            "transition-left-to-right": true,
+            "click-to-reveal": true
         },
-        "modules": [
-            "pulseaudio",
-            "pulseaudio/slider"
-        ]
+        "modules": ["pulseaudio", "pulseaudio/slider"]
     },
     "modules-left": [
         "custom/launcher",
         "hyprland/workspaces",
         "cpu",
-        "memory"
+        "memory",
+        "mpris"
     ],
-    "modules-center": [
-        "clock"
-    ],
+    "modules-center": ["clock"],
     "modules-right": [
         "tray",
         "privacy",
         "custom/notification",
         "group/group-pulseaudio",
+        "custom/updates",
         "network",
         "group/group-power"
     ],
+    "mpris": {
+        "[format]-len": 40,
+        "dynamic-len": 40,
+        "dynamic-importance-order": ["title", "artist", "position", "length"],
+        "dynamic-order": ["title", "artist", "position", "length"],
+        // "format": "{player_icon} {title} - {artist} [{position}/{length}]",
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "⏸",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "▶"
+        }
+    },
     "hyprland/workspaces": {
         "icon-size": 18,
         "active-only": false,
@@ -62,13 +76,9 @@
         "format-muted": " ",
         "on-scroll-up": "swayosd-client --output-volume 2",
         "on-scroll-down": "swayosd-client --output-volume -2",
-        "on-click": "pavucontrol",
+        // "on-click-middle": "pavucontrol",
         "format-icons": {
-            "default": [
-                " ",
-                " ",
-                " "
-            ]
+            "default": [" ", " ", " "]
         }
     },
     "hyprland/window": {
@@ -78,9 +88,10 @@
     },
     "network": {
         "tooltip": false,
-        "format-wifi": " {essid}",
+        "format-wifi": "  {essid}",
         "format-ethernet": " ",
-        "tooltip-format-disconnected": "Disconnected"
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor"
     },
     "tray": {
         "icon-size": 20,
@@ -89,8 +100,11 @@
     },
     "clock": {
         "interval": 1,
-        "format": "<b>{:%H:%M:%S}</b>",
-        "tooltip-format": "<big>{:%Y-%m-%d %A %Z}</big>"
+        "tooltip-format": "<big>{:%Y-%m-%d %A %Z}</big>",
+        "locale": "zh_CN.UTF-8",
+        "timezones": ["Asia/Shanghai"],
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%Y年%m月%d日 %A}"
     },
     "cpu": {
         "interval": 15,
@@ -104,7 +118,7 @@
         "max-length": 10
     },
     "privacy": {
-        "icon-spacing": 4,
+        "icon-spacing": 5,
         "icon-size": 18,
         "transition-duration": 250,
         "modules": [
@@ -113,11 +127,11 @@
                 "tooltip": true,
                 "tooltip-icon-size": 24
             },
-            {
-                "type": "audio-out",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
+            // {
+            //     "type": "audio-out",
+            //     "tooltip": true,
+            //     "tooltip-icon-size": 24
+            // },
             {
                 "type": "audio-in",
                 "tooltip": true,
@@ -144,6 +158,17 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "custom/updates": {
+        "format": "{} {icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "󱍷 ",
+            "updated": "󰂪 "
+        },
+        // "on-click": "kitty -e paru",
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
     },
     "custom/launcher": {
         "icon-size": 20,

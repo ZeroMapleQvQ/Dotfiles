@@ -1,0 +1,17 @@
+[manager]
+sort_by = "natural"
+sort_dir_first = true
+linemode = "size"
+[preview]
+warp = "yes"
+tab_size = 4
+[plugin]
+prepend_previewers = [
+	# HEIC previewer
+	{ mime = "image/heic", run = "heic" },
+]
+
+append_previewers = [
+	# My fallback previewer
+	{ name = "*" , run = "binary" },
+]

@@ -1,0 +1,139 @@
+	anchor = top
+	width = 100%
+	height = 30
+	horizontal = true
+	font-size = 14
+	prompt-text = " run: "
+	font = monospace
+	outline-width = 0
+	border-width = 0
+	background-color = #000000
+	min-input-width = 120
+	result-spacing = 15
+	padding-top = 0
+	padding-bottom = 0
+	padding-left = 0
+	padding-right = 0
+
+
+
+	# # Window Style
+	# horizontal = true
+	# anchor = top
+	# width = 100%
+	# height = 48
+	# outline-width = 0
+	# border-width = 0
+	# min-input-width = 120
+	# result-spacing = 30
+	# padding-top = 8
+	# padding-bottom = 0
+	# padding-left = 20
+	# padding-right = 0
+	# # Text style
+	# prompt-text = "Can I have a"
+	# prompt-padding = 30
+	# background-color = #fff0dc
+	# text-color = #4280a0
+	# prompt-background = #eebab1
+	# prompt-background-padding = 4, 10
+	# prompt-background-corner-radius = 12
+	# input-color = #e1666a
+	# input-background = #f4cf42
+	# input-background-padding = 4, 10
+	# input-background-corner-radius = 12
+	# alternate-result-background = #b8daf3
+	# alternate-result-background-padding = 4, 10
+	# alternate-result-background-corner-radius = 12
+	# selection-color = #f0d2af
+	# selection-background = #da5d64
+	# selection-background-padding = 4, 10
+	# selection-baight = 0
+	# ckground-corner-radius = 12
+	# selection-match-color = #fff
+	# clip-to-padding = false
+
+
+
+	font = "/usr/share/fonts/ttf-maple-beta/MapleMono-NF-CN-Regular.ttf"
+	font-size = 18
+	font-features = "zero, ss03, cv99"
+	font-variations = ""
+	hint-font = true
+# #
+# ### Text theming
+# #
+# 	text-color = #FFFFFF
+# 	prompt-background = #00000000
+# 	prompt-background-padding = 0
+# 	prompt-background-corner-radius = 0
+# 	placeholder-color = #FFFFFFA8
+# 	placeholder-background = #00000000
+# 	placeholder-background-padding = 0
+# 	placeholder-background-corner-radius = 0
+# 	input-background = #00000000
+# 	input-background-padding = 0
+# 	input-background-corner-radius = 0
+# 	default-result-background = #00000000
+# 	default-result-background-padding = 0
+# 	default-result-background-corner-radius = 0
+# 	selection-color = #F92672
+# 	selection-background = #00000000
+# 	selection-background-padding = 0
+# 	selection-background-corner-radius = 0
+# 	selection-match-color = #00000000
+# #
+# ### Text cursor theme
+# #
+# 	text-cursor-style = bar
+# 	text-cursor-corner-radius = 0
+# 	prompt-text = "run: "
+# 	prompt-padding = 0
+# 	placeholder-text = ""
+# 	num-results = 0
+# 	result-spacing = 0
+# 	horizontal = false
+# 	min-input-width = 0
+# #
+# ### Window theming
+# #
+# 	width = 900
+# 	height = 600
+# 	background-color = #1B1D1E
+# 	outline-width = 4
+# 	outline-color = #080800
+# 	border-width = 6
+# 	border-color = #F92672
+# 	corner-radius = 20
+# 	padding-top = 8
+# 	padding-bottom = 8
+# 	padding-left = 8
+# 	padding-right = 8
+# 	clip-to-padding = true
+# 	scale = true
+# #
+# ### Window positioning
+# #
+# 	output = ""
+# 	anchor = center
+# 	exclusive-zone = -1
+# 	margin-top = 0
+# 	margin-bottom = 0
+# 	margin-left = 0
+# 	margin-right = 0
+#
+### Behaviour
+#
+	hide-cursor = false
+	text-cursor = true
+	history = true
+	fuzzy-match = false
+	require-match = true
+	auto-accept-single = false
+	hide-input = false
+	hidden-character = "*"
+	drun-launch = false
+	terminal = alacritty
+	late-keyboard-init = false
+	multi-instance = false
+	ascii-input = true
