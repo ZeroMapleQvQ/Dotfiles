@@ -26,6 +26,16 @@
         },
         "modules": ["pulseaudio", "pulseaudio/slider"]
     },
+    "group/group-bluetooth": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-bluetooth",
+            "transition-left-to-right": true,
+            "click-to-reveal": true
+        },
+        "modules": ["custom/bluetooth", "bluetooth"]
+    },
     "modules-left": [
         "custom/launcher",
         "hyprland/workspaces",
@@ -38,12 +48,21 @@
         "tray",
         "privacy",
         "custom/notification",
+        // "pulseaudio",
         "group/group-pulseaudio",
-        "custom/updates",
+        // "group/group-bluetooth",
+        // "custom/updates",
         "network",
         "group/group-power"
     ],
+    "bluetooth": {
+        "format": "{status}",
+        "format-connected": "{num_connections} connected",
+        "format-disconnected": "",
+        "format-connected-battery": "{device_alias} {device_battery_percentage}%"
+    },
     "mpris": {
+        "interval": 1,
         "[format]-len": 40,
         "dynamic-len": 40,
         "dynamic-importance-order": ["title", "artist", "position", "length"],
@@ -52,7 +71,7 @@
         "format": "{player_icon} {dynamic}",
         "format-paused": "{status_icon} <i>{dynamic}</i>",
         "player-icons": {
-            "default": "⏸",
+            "default": "",
             "mpv": "🎵"
         },
         "status-icons": {
@@ -76,7 +95,7 @@
         "format-muted": " ",
         "on-scroll-up": "swayosd-client --output-volume 2",
         "on-scroll-down": "swayosd-client --output-volume -2",
-        // "on-click-middle": "pavucontrol",
+        "on-click-middle": "pavucontrol",
         "format-icons": {
             "default": [" ", " ", " "]
         }
@@ -91,7 +110,7 @@
         "format-wifi": "  {essid}",
         "format-ethernet": " ",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "nm-connection-editor"
+        "on-click-right": "nm-connection-editor"
     },
     "tray": {
         "icon-size": 20,
@@ -100,7 +119,7 @@
     },
     "clock": {
         "interval": 1,
-        "tooltip-format": "<big>{:%Y-%m-%d %A %Z}</big>",
+        "tooltip-format": "{:%Y-%m-%d %A %H:%M:%S}",
         "locale": "zh_CN.UTF-8",
         "timezones": ["Asia/Shanghai"],
         "format": "{:%H:%M:%S}",
@@ -110,7 +129,7 @@
         "interval": 15,
         "format": " {}%",
         "max-length": 10,
-        "on-click": "kitty htop"
+        "on-click": "kitty btop"
     },
     "memory": {
         "interval": 30,
@@ -158,6 +177,11 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "custom/bluetooth": {
+        "icon-size": 26,
+        "format": " "
+        // "on-click-right": "blueman-manager"
     },
     "custom/updates": {
         "format": "{} {icon}",

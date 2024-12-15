@@ -1,19 +1,19 @@
-	anchor = top
-	width = 100%
-	height = 30
-	horizontal = true
-	font-size = 14
-	prompt-text = " run: "
-	font = monospace
-	outline-width = 0
-	border-width = 0
-	background-color = #000000
-	min-input-width = 120
-	result-spacing = 15
-	padding-top = 0
-	padding-bottom = 0
-	padding-left = 0
-	padding-right = 0
+	# anchor = top
+	# width = 100%
+	# height = 30
+	# horizontal = true
+	# font-size = 14
+	# prompt-text = " run: "
+	# font = monospace
+	# outline-width = 0
+	# border-width = 0
+	# background-color = #000000
+	# min-input-width = 120
+	# result-spacing = 15
+	# padding-top = 0
+	# padding-bottom = 0
+	# padding-left = 0
+	# padding-right = 0
 
 
 
@@ -53,87 +53,84 @@
 	# selection-match-color = #fff
 	# clip-to-padding = false
 
+	# Text theming
+	text-color = #FFFFFF
+	prompt-background = #00000000
+	prompt-background-padding = 0
+	prompt-background-corner-radius = 0
+	placeholder-color = #FFFFFFA8
+	placeholder-background = #00000000
+	placeholder-background-padding = 0
+	placeholder-background-corner-radius = 0
+	input-background = #00000000
+	input-background-padding = 0
+	input-background-corner-radius = 0
+	default-result-background = #00000000
+	default-result-background-padding = 0
+	default-result-background-corner-radius = 0
+	selection-color = #F92672
+	selection-background = #00000000
+	selection-background-padding = 0
+	selection-background-corner-radius = 0
+	selection-match-color = #00000000
+	# Text cursor theme
+	text-cursor-style = bar
+	text-cursor-corner-radius = 0
+	prompt-text = "run: "
+	prompt-padding = 0
+	placeholder-text = ""
+	num-results = 0
+	result-spacing = 0
+	horizontal = false
+	min-input-width = 0
+	# Window theming
+	width = 1100
+	height = 500
+	background-color = #1B1D1E
+	outline-width = 4
+	outline-color = #080800
+	border-width = 3
+	border-color = #F92672
+	corner-radius = 20
+	padding-top = 8
+	padding-bottom = 8
+	padding-left = 8
+	padding-right = 8
+	clip-to-padding = true
+	scale = true
+	# Window positioning
+	output = ""
+	anchor = center
+	exclusive-zone = -1
+	margin-top = 0
+	margin-bottom = 0
+	margin-left = 0
+	margin-right = 0
+
+# # Catppuccin Macchiato
+# text-color = #cad3f5
+# prompt-color = #ed8796
+# selection-color = #eed49f
+# background-color = #24273a
+
 
 
 	font = "/usr/share/fonts/ttf-maple-beta/MapleMono-NF-CN-Regular.ttf"
-	font-size = 18
+	font-size = 16
 	font-features = "zero, ss03, cv99"
-	font-variations = ""
+	font-variations = "zero, ss03, cv99"
 	hint-font = true
-# #
-# ### Text theming
-# #
-# 	text-color = #FFFFFF
-# 	prompt-background = #00000000
-# 	prompt-background-padding = 0
-# 	prompt-background-corner-radius = 0
-# 	placeholder-color = #FFFFFFA8
-# 	placeholder-background = #00000000
-# 	placeholder-background-padding = 0
-# 	placeholder-background-corner-radius = 0
-# 	input-background = #00000000
-# 	input-background-padding = 0
-# 	input-background-corner-radius = 0
-# 	default-result-background = #00000000
-# 	default-result-background-padding = 0
-# 	default-result-background-corner-radius = 0
-# 	selection-color = #F92672
-# 	selection-background = #00000000
-# 	selection-background-padding = 0
-# 	selection-background-corner-radius = 0
-# 	selection-match-color = #00000000
-# #
-# ### Text cursor theme
-# #
-# 	text-cursor-style = bar
-# 	text-cursor-corner-radius = 0
-# 	prompt-text = "run: "
-# 	prompt-padding = 0
-# 	placeholder-text = ""
-# 	num-results = 0
-# 	result-spacing = 0
-# 	horizontal = false
-# 	min-input-width = 0
-# #
-# ### Window theming
-# #
-# 	width = 900
-# 	height = 600
-# 	background-color = #1B1D1E
-# 	outline-width = 4
-# 	outline-color = #080800
-# 	border-width = 6
-# 	border-color = #F92672
-# 	corner-radius = 20
-# 	padding-top = 8
-# 	padding-bottom = 8
-# 	padding-left = 8
-# 	padding-right = 8
-# 	clip-to-padding = true
-# 	scale = true
-# #
-# ### Window positioning
-# #
-# 	output = ""
-# 	anchor = center
-# 	exclusive-zone = -1
-# 	margin-top = 0
-# 	margin-bottom = 0
-# 	margin-left = 0
-# 	margin-right = 0
-#
-### Behaviour
-#
+
 	hide-cursor = false
 	text-cursor = true
-	history = true
+	history = false
 	fuzzy-match = false
 	require-match = true
 	auto-accept-single = false
 	hide-input = false
 	hidden-character = "*"
 	drun-launch = false
-	terminal = alacritty
+	terminal = kitty
 	late-keyboard-init = false
 	multi-instance = false
-	ascii-input = true
+	ascii-input = false

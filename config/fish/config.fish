@@ -1,6 +1,6 @@
-export "http_proxy=http://127.0.0.1:7890"
-export "https_proxy=http://127.0.0.1:7890"
-export "all_proxy=socks5://127.0.0.1:7890"
+# export "http_proxy=http://127.0.0.1:7890"
+# export "https_proxy=http://127.0.0.1:7890"
+# export "all_proxy=socks5://127.0.0.1:7890"
 
 set -g fish_greeting ""
 
@@ -16,11 +16,16 @@ end
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_ENABLE_WAYLAND=1
 export EDITOR=vim
+# export XDG_CONFIG_HOME="{$HOME}/.config"
 
-# SDK
+# Typora
+export TYPORA_USER_FLAGS="--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --enable-wayland-ime"
 
 # Dotnet
 export DOTNET_RPPT=/usr/share/dotnet/
+
+# QQ
+export LITELOADERQQNT_PROFILE="$HOME/.config/QQ/LiteLoaderQQNT/"
 
 export LANG=zh_CN.UTF-8
 
